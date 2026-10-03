@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="billingMenu" class="hidden">
+        <div class="header">
+            <img id="logo" src="logo.png" alt="Logo">
+            <h1>Billing System</h1>
+        </div>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('myInvoices')">My Invoices</button>
+            <button class="tab-button" onclick="openTab('open')">Open</button>
+            <button class="tab-button" onclick="openTab('paid')">Paid</button>
+            <button class="tab-button" onclick="openTab('sent')">Sent</button>
+        </div>
+        <div id="myInvoices" class="tab-content active">
+            <div class="invoice-list" id="myInvoicesList"></div>
+        </div>
+        <div id="open" class="tab-content">
+            <div class="invoice-list" id="openInvoicesList"></div>
+        </div>
+        <div id="paid" class="tab-content">
+            <div class="invoice-list" id="paidInvoicesList"></div>
+        </div>
+        <div id="sent" class="tab-content">
+            <div class="invoice-list" id="sentInvoicesList"></div>
+        </div>
+        <div class="send-invoice">
+            <h2>Send Invoice</h2>
+            <input type="number" id="receiverId" placeholder="Receiver ID">
+            <input type="number" id="amount" placeholder="Amount">
+            <input type="text" id="description" placeholder="Description">
+            <button onclick="sendInvoice()">Send Invoice</button>
+        </div>
+        <button class="close-button" onclick="closeBillingMenu()">Close</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
